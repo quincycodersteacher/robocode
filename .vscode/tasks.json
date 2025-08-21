@@ -2,17 +2,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile robots1",
-            "command": "./compile.sh",
-            "type": "shell"
-        },
-        {
             "label": "compile robots",
             "type": "shell",
             "command": "javac",
             "args": [
-                "-d",
-                "robots/quincycoders/QCDemo.java" // Path to your Java source files
+                "-cp",
+                "${workspaceFolder}/libs/robocode.jar", //  Classpath argument: Points to a 'lib' directory and a specific JAR file. Separate paths with ':' on Linux/macOS and ';' on Windows.
+                "${workspaceFolder}/robots/quincycoders/*.java" // Path to your Java source file
             ],
             "group": {
                 "kind": "build",
